@@ -1,1 +1,2 @@
-export * from './com';
+import './index.less';
+export * from './my-com';

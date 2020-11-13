@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1605242949605" clover="3.2.0">
-  <project timestamp="1605242949605" name="All files">
-    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="7" coveredelements="7" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
-    <file name="com.tsx" path="/Users/xmly/learn/xmly-origin/packages/demo/src/com.tsx">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-    </file>
-    <file name="index.ts" path="/Users/xmly/learn/xmly-origin/packages/demo/src/index.ts">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-    </file>
+<coverage generated="1605249872285" clover="3.2.0">
+  <project timestamp="1605249872285" name="All files">
+    <metrics statements="19" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="4" elements="27" coveredelements="22" complexity="0" loc="19" ncloc="19" packages="2" files="4" classes="4"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/xmly/learn/create-react-pkg/packages/demo/src/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.my-com">
+      <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="4"/>
+      <file name="Demo.tsx" path="/Users/xmly/learn/create-react-pkg/packages/demo/src/my-com/Demo.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="Link.tsx" path="/Users/xmly/learn/create-react-pkg/packages/demo/src/my-com/Link.tsx">
+        <metrics statements="10" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/xmly/learn/create-react-pkg/packages/demo/src/my-com/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
