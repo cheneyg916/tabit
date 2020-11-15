@@ -1,6 +1,6 @@
 {
   "name": "@xmly/demo",
-  "version": "0.0.8-alpha.0",
+  "version": "0.0.9-alpha.0",
   "umdName": "demo",
   "description": "a lib dev template example",
   "author": "zfh",
