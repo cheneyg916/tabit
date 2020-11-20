@@ -19,16 +19,15 @@ module.exports = {
     plugins: ['@typescript-eslint', 'prettier', 'jest', 'react', 'react-hooks'],
     root: true,
     rules: {
-        //缩进4空格
         indent: [
             'error',
-            4,
+            2,
             {
                 SwitchCase: 1
             }
         ],
         //强制单引号 可以使用es6模板语法
-        //quotes: ['error', 'single', { allowTemplateLiterals: true }],
+        quotes: ['error', 'single', { allowTemplateLiterals: true }],
         //尾部分号
         semi: ['error', 'always'],
         //防止错误for循环
@@ -46,8 +45,8 @@ module.exports = {
         //不准比较自身
         'no-self-compare': 'error',
         // 变量声明了 必须使用
-        //'no-unused-vars': 'error',
-        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used' }],
+        'no-unused-vars': 'warning',
+        '@typescript-eslint/no-unused-vars': ['warning', { vars: 'all', args: 'after-used' }],
         //禁止对参数重新赋值
         'no-param-reassign': 'error',
         'no-delete-var': 'error', //不能对var声明的变量使用delete操作符

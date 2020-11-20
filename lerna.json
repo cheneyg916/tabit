@@ -9,6 +9,7 @@
     "publish": {
       "registry": "http://localhost:4873/",
       "ignoreChanges": [
+        "ignored-file",
         "*.md"
       ]
     }
