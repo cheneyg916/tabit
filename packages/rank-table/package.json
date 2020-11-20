@@ -1,0 +1,35 @@
+{
+  "name": "@tabit/rank-table",
+  "version": "0.0.9-alpha.0",
+  "umdName": "rank-table",
+  "description": "a table component based on antd ",
+  "author": "kevin",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "antd": ">=3",
+    "classnames": ">=2",
+    "history": ">=4",
+    "minireset.css": ">=0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
+    "react-router": ">=4",
+    "styled-components": ">=4"
+  },
+  "types": "./lib/index.d.ts",
+  "devDependencies": {
+    "@types/react": "^16.9.2",
+    "antd": "^3.23.2",
+    "less": "^3.12.2",
+    "less-loader": "^7.1.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.3.0"
+  }
+}
