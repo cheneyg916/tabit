@@ -1,6 +1,6 @@
 {
   "name": "@tabit/rank-table",
-  "version": "0.0.9-alpha.0",
+  "version": "0.0.0",
   "umdName": "rank-table",
   "description": "a table component based on antd ",
   "author": "kevin",
@@ -27,7 +27,8 @@
     "less-loader": "^7.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "yarn-release": "^1.10.2"
   },
   "dependencies": {
     "@ant-design/icons": "^4.3.0"

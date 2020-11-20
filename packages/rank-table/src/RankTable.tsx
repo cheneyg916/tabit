@@ -259,7 +259,32 @@ export function RankTable({
                 loading={loading}
                 pagination={
                     outPagination
-                        ? { defaultPageSize: defaultPageSize ? defaultPageSize : 10 }
+                        ? pageByBackend
+                            ? {
+                                  total: tableData.length,
+                                  pageSize: defaultPageSize ? defaultPageSize : 10,
+                                  current,
+                                  showTotal: total => (
+                                      <>
+                                          {defaultPageSize ? defaultPageSize : 10} 条 / 页，共{' '}
+                                          {total} 条
+                                      </>
+                                  ),
+                                  onChange: (page: number, pageSize?: number) => {
+                                      setCurrentPage({ page, pageSize });
+                                      setCurrent(page);
+                                  }
+                              }
+                            : {
+                                  total: tableData.length,
+                                  pageSize: defaultPageSize ? defaultPageSize : 10,
+                                  showTotal: total => (
+                                      <>
+                                          {defaultPageSize ? defaultPageSize : 10} 条 / 页，共{' '}
+                                          {total} 条
+                                      </>
+                                  )
+                              }
                         : false
                 }
                 dataSource={
@@ -300,82 +325,77 @@ export function RankTable({
                         style={{
                             marginBottom: 10
                         }}
-                        // gutter={16}
                     >
-                        {
-                            <Col span={2} offset={18}>
+                        <Col span={2} offset={18}>
+                            <Select
+                                defaultValue={defaultPageSize ? defaultPageSize : 10}
+                                onChange={(value: number) => setPageSize(value)}
+                            >
+                                <Option key={10} value={10}>
+                                    10 条 / 页
+                                </Option>
+                                <Option key={20} value={20}>
+                                    20 条 / 页
+                                </Option>
+                                <Option key={50} value={50}>
+                                    50 条 / 页
+                                </Option>
+                                <Option key={100} value={100}>
+                                    100 条 / 页
+                                </Option>
+                            </Select>
+                        </Col>
+                        <Col span={4}>
+                            {searchByBackend ? (
+                                <Input
+                                    placeholder="按下回车搜索"
+                                    // enterButton="Search"
+                                    allowClear
+                                    onChange={e => {
+                                        if (e.currentTarget.value === '') {
+                                            delete query[searchKey];
+                                            setCurrentPage({ page: 1, pageSize: pageSize });
+                                        }
+                                    }}
+                                    onPressEnter={e => {
+                                        const searchQuery = {} as any;
+                                        searchQuery[searchKey!] = e.currentTarget.value;
+                                        delete query['page'];
+                                        delete query['pageSize'];
+                                        getData(
+                                            Object.assign(
+                                                query,
+                                                Object.assign(searchQuery, {
+                                                    page: 1,
+                                                    pageSize: pageSize
+                                                })
+                                            )
+                                        );
+                                        //   onSearch && onSearch(e.target.value);
+                                        setCurrent(1);
+                                    }}
+                                />
+                            ) : (
                                 <Select
-                                    defaultValue={defaultPageSize ? defaultPageSize : 10}
-                                    onChange={(value: number) => setPageSize(value)}
+                                    showSearch
+                                    placeholder={`Search by ${searchKey}`}
+                                    allowClear
+                                    style={{ width: '100%' }}
+                                    onChange={(value: string) => {
+                                        setSearchValue(value);
+                                        setCurrent(1);
+                                    }}
                                 >
-                                    <Option key={10} value={10}>
-                                        10 条 / 页
-                                    </Option>
-                                    <Option key={20} value={20}>
-                                        20 条 / 页
-                                    </Option>
-                                    <Option key={50} value={50}>
-                                        50 条 / 页
-                                    </Option>
-                                    <Option key={100} value={100}>
-                                        100 条 / 页
-                                    </Option>
+                                    {unique(searchList).map((item: any) => (
+                                        <Select.Option value={item} key={item}>
+                                            <Tooltip placement="topLeft" title={item}>
+                                                {item}
+                                            </Tooltip>
+                                        </Select.Option>
+                                    ))}
                                 </Select>
-                            </Col>
-                        }
-                        {
-                            <Col span={4}>
-                                {searchByBackend ? (
-                                    <Input
-                                        placeholder="按下回车搜索"
-                                        // enterButton="Search"
-                                        allowClear
-                                        onChange={e => {
-                                            if (e.currentTarget.value === '') {
-                                                delete query[searchKey];
-                                                setCurrentPage({ page: 1, pageSize: pageSize });
-                                            }
-                                        }}
-                                        onPressEnter={e => {
-                                            const searchQuery = {} as any;
-                                            searchQuery[searchKey!] = e.currentTarget.value;
-                                            delete query['page'];
-                                            delete query['pageSize'];
-                                            getData(
-                                                Object.assign(
-                                                    query,
-                                                    Object.assign(searchQuery, {
-                                                        page: 1,
-                                                        pageSize: pageSize
-                                                    })
-                                                )
-                                            );
-                                            //   onSearch && onSearch(e.target.value);
-                                            setCurrent(1);
-                                        }}
-                                    />
-                                ) : (
-                                    <Select
-                                        showSearch
-                                        placeholder={`Search by ${searchKey}`}
-                                        allowClear
-                                        style={{ width: '100%' }}
-                                        onChange={(value: string) => {
-                                            setSearchValue(value);
-                                            setCurrent(1);
-                                        }}
-                                    >
-                                        {unique(searchList).map((item: any) => (
-                                            <Select.Option value={item} key={item}>
-                                                <Tooltip placement="topLeft" title={item}>
-                                                    {item}
-                                                </Tooltip>
-                                            </Select.Option>
-                                        ))}
-                                    </Select>
-                                )}
-                            </Col>
-                        }
+                            )}
+                        </Col>
                     </Row>
 
                     <div className={styles.rankTable_normal}>
