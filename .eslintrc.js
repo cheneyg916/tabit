@@ -4,7 +4,7 @@ module.exports = {
         commonjs: true,
         es6: true,
         node: true,
-        "jest/globals": true
+        'jest/globals': true
     },
     parser: '@typescript-eslint/parser',
     extends: ['eslint:recommended', 'plugin:react/recommended'],
@@ -45,8 +45,8 @@ module.exports = {
         //不准比较自身
         'no-self-compare': 'error',
         // 变量声明了 必须使用
-        'no-unused-vars': 'warning',
-        '@typescript-eslint/no-unused-vars': ['warning', { vars: 'all', args: 'after-used' }],
+        'no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', args: 'after-used' }],
         //禁止对参数重新赋值
         'no-param-reassign': 'error',
         'no-delete-var': 'error', //不能对var声明的变量使用delete操作符

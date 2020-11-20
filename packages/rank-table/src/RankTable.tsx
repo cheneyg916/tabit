@@ -331,12 +331,25 @@ export function RankTable({
                                         // enterButton="Search"
                                         allowClear
                                         onChange={e => {
-                                            e.currentTarget.value === '' && getData(query);
+                                            if (e.currentTarget.value === '') {
+                                                delete query[searchKey];
+                                                setCurrentPage({ page: 1, pageSize: pageSize });
+                                            }
                                         }}
                                         onPressEnter={e => {
                                             const searchQuery = {} as any;
                                             searchQuery[searchKey!] = e.currentTarget.value;
-                                            getData(Object.assign(query, searchQuery));
+                                            delete query['page'];
+                                            delete query['pageSize'];
+                                            getData(
+                                                Object.assign(
+                                                    query,
+                                                    Object.assign(searchQuery, {
+                                                        page: 1,
+                                                        pageSize: pageSize
+                                                    })
+                                                )
+                                            );
                                             //   onSearch && onSearch(e.target.value);
                                             setCurrent(1);
                                         }}
