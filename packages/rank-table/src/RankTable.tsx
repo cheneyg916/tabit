@@ -8,6 +8,7 @@ import { Table, Row, Col, Drawer, Select, Tooltip, Input } from 'antd';
 import styles from '../style/index.less';
 const { Option } = Select;
 declare const RankTableSize: ['small', 'middle', 'normal'];
+declare const defaultSortOrder: ['descend', 'ascend', 'normal'];
 
 export interface ColumnsConfig {
   title: string;
@@ -27,7 +28,6 @@ export interface RankTableConfig {
   title?: string;
   subTitle?: string;
   column: Array<ColumnsConfig>;
-  showDraw?: Function;
   more?: boolean;
   outPagination?: boolean;
   dataSlice?: number | boolean;
@@ -44,7 +44,6 @@ export function RankTable({
   title,
   subTitle,
   column,
-  showDraw,
   more,
   outPagination,
   dataSlice,
@@ -122,7 +121,6 @@ export function RankTable({
 
   const onFullScreenHandler = () => {
     setIsShowModal(true);
-    typeof showDraw === 'function' && showDraw(true);
   };
   const handleClose = () => {
     setIsShowModal(false);
@@ -358,10 +356,13 @@ export function RankTable({
                     getData(
                       Object.assign(
                         query,
-                        Object.assign(searchQuery, {
-                          page: 1,
-                          pageSize
-                        })
+                        Object.assign(
+                          searchQuery,
+                          pageByBackend && {
+                            page: 1,
+                            pageSize
+                          }
+                        )
                       )
                     );
                     //   onSearch && onSearch(e.target.value);
@@ -371,7 +372,7 @@ export function RankTable({
               ) : (
                 <Select
                   showSearch
-                  placeholder={`Search by ${searchKey}`}
+                  placeholder={`Search ${searchKey}`}
                   allowClear
                   style={{ width: '100%' }}
                   onChange={(value: string) => {

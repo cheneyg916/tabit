@@ -40,7 +40,11 @@ export const getColumnSearchProps = (dataIndex: string) => ({
       >
         Search
       </Button>
-      <Button onClick={() => handleReset(clearFilters)} size="small" style={{ width: 90 }}>
+      <Button
+        onClick={() => handleReset(clearFilters)}
+        size="small"
+        style={{ width: 90, marginLeft: 8 }}
+      >
         Reset
       </Button>
     </div>
