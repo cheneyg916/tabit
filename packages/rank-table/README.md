@@ -89,13 +89,15 @@ return (
 );
 ```
 
+> `searchKey`指定的的是完整数据表格里，所要搜索列对应的字段，而`getColumnSearchProps`里的参数是当前所要搜索列的`dataIndex`。
+
 ### 页面跳转
 
 列配置 jumpTo，其中包含两个字段 `url`：页面 url，`query`：路由参数。
 
 ![image-20201123192719339](https://fdfs.xmcdn.com/storages/95dd-audiofreehighqps/42/FD/CMCoOSUDk5VmAAGA5gBqgCq7.png)
 
-![image-20201123193101398](https://fdfs.xmcdn.com/storages/1657-audiofreehighqps/DD/D2/CMCoOSYDk5VmAABKCwBqgCq5.png)
+跳转后的地址：`***/jump/to?id=1`
 
 ```jsx
 import { RankTable } from '@tabit/rank-table';
@@ -142,11 +144,25 @@ return (
 
 当`searchByBackend`为`true`时，前端发送请求会自动在请求参数上添加`searchKey`（由`searchKey`指定）字段：
 
-![image-20201123193912136](https://fdfs.xmcdn.com/storages/8d76-audiofreehighqps/F3/27/CMCoOR4Dk5VnAACQjgBqgCq-.png)
+```
+Query String Parameters
+{
+	"id":1,
+	"address":"search"
+}
+```
 
 当`pageByBackend`为`true`时，前端发送请求会自动在请求参数上添加`page`、`pageSize`字段：
 
-![image-20201123194039645](https://fdfs.xmcdn.com/storages/1fdd-audiofreehighqps/10/21/CMCoOR4Dk5VnAADAlABqgCrF.png)
+```
+Query String Parameters
+{
+	"id":1,
+	"address":"search",
+	"page":1,
+	"pageSize":10
+}
+```
 
 ```jsx
 import { RankTable } from '@tabit/rank-table';
