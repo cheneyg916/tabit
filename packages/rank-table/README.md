@@ -8,9 +8,9 @@
 
 点击“更多”显示完整数据表格。
 
-![image-20201123191020244](/Users/xmly/Library/Application Support/typora-user-images/image-20201123191020244.png)
+![image-20201123191020244](https://fdfs.xmcdn.com/storages/c73d-audiofreehighqps/7C/C4/CMCoOSMDk5VmAAEc6wBqgCqh.png)
 
-![image-20201123191503729](/Users/xmly/Library/Application Support/typora-user-images/image-20201123191503729.png)
+![image-20201123191503729](https://fdfs.xmcdn.com/storages/4c05-audiofreehighqps/D3/94/CMCoOSYDk5VmAANOyQBqgCqn.png)
 
 ```jsx
 import { RankTable } from '@tabit/rank-table';
@@ -50,9 +50,9 @@ return (
 
 表格支持行内搜索，引入`getColumnSearchProps`并在列中配置。
 
-![image-20201123192212616](/Users/xmly/Library/Application Support/typora-user-images/image-20201123192212616.png)
+![image-20201123192212616](https://fdfs.xmcdn.com/storages/461c-audiofreehighqps/A4/B8/CMCoOScDk5VmAAGNRgBqgCqt.png)
 
-![image-20201123192552804](/Users/xmly/Library/Application Support/typora-user-images/image-20201123192552804.png)
+![image-20201123192552804](https://fdfs.xmcdn.com/storages/1629-audiofreehighqps/96/8D/CMCoOSQDk5VmAAN16ABqgCqw.png)
 
 ```jsx
 import { RankTable, getColumnSearchProps } from '@tabit/rank-table';
@@ -93,9 +93,9 @@ return (
 
 列配置 jumpTo，其中包含两个字段 `url`：页面 url，`query`：路由参数。
 
-![image-20201123192719339](/Users/xmly/Library/Application Support/typora-user-images/image-20201123192719339.png)
+![image-20201123192719339](https://fdfs.xmcdn.com/storages/95dd-audiofreehighqps/42/FD/CMCoOSUDk5VmAAGA5gBqgCq7.png)
 
-![image-20201123193101398](/Users/xmly/Library/Application Support/typora-user-images/image-20201123193101398.png)
+![image-20201123193101398](https://fdfs.xmcdn.com/storages/1657-audiofreehighqps/DD/D2/CMCoOSYDk5VmAABKCwBqgCq5.png)
 
 ```jsx
 import { RankTable } from '@tabit/rank-table';
@@ -142,11 +142,11 @@ return (
 
 当`searchByBackend`为`true`时，前端发送请求会自动在请求参数上添加`searchKey`（由`searchKey`指定）字段：
 
-![image-20201123193912136](/Users/xmly/Library/Application Support/typora-user-images/image-20201123193912136.png)
+![image-20201123193912136](https://fdfs.xmcdn.com/storages/8d76-audiofreehighqps/F3/27/CMCoOR4Dk5VnAACQjgBqgCq-.png)
 
 当`pageByBackend`为`true`时，前端发送请求会自动在请求参数上添加`page`、`pageSize`字段：
 
-![image-20201123194039645](/Users/xmly/Library/Application Support/typora-user-images/image-20201123194039645.png)
+![image-20201123194039645](https://fdfs.xmcdn.com/storages/1fdd-audiofreehighqps/10/21/CMCoOR4Dk5VnAADAlABqgCrF.png)
 
 ```jsx
 import { RankTable } from '@tabit/rank-table';
