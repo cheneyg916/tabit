@@ -11,26 +11,20 @@
   },
   "peerDependencies": {
     "antd": ">=3",
-    "classnames": ">=2",
-    "history": ">=4",
+    "classnames": ">=2",   
     "minireset.css": ">=0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
     "react-router": ">=4",
-    "styled-components": ">=4"
+    "styled-components": ">=4",
+    "@ant-design/icons": ">=4"
   },
   "types": "./lib/index.d.ts",
   "devDependencies": {
     "@types/react": "^16.9.2",
-    "antd": "^3.23.2",
-    "less": "^3.12.2",
-    "less-loader": "^7.1.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "^3.5.3",
     "yarn-release": "^1.10.2"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.3.0"
+    "history": ">=4"    
   }
 }

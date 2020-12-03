@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 
 // @ts-ignore
-import history from '@@/history';
+import history from 'history';
 import React, { useState, useEffect } from 'react';
 import { Table, Row, Col, Drawer, Select, Tooltip, Input } from 'antd';
 import styles from '../style/index.less';
