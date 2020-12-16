@@ -5,6 +5,7 @@
 import history from 'history';
 import React, { useState, useEffect } from 'react';
 import { Table, Row, Col, Drawer, Select, Tooltip, Input } from 'antd';
+import CopyIcon from './components/copyIcon';
 import styles from '../style/index.less';
 const { Option } = Select;
 declare const RankTableSize: ['small', 'middle', 'normal'];
@@ -19,6 +20,9 @@ export interface ColumnsConfig {
     query?: any;
   };
   defaultSortOrder?: any;
+  needCopy?: boolean;
+  copyMsg?: string;
+  copyClass?: string;
   render?: any;
   toolTip?: boolean;
   color?: string;
@@ -132,31 +136,38 @@ export function RankTable({
       columns[i]['defaultSortOrder'] = 'descend';
       // columns[i]['sortDirections'] = ['ascend', 'descend', 'ascend'];  // 去掉默认排序
       columns[i]['render'] = (text: any) => (
-        <a
-          onClick={() => {
-            history.push({
-              pathname: columns[i]?.jumpTo?.url,
-              query: columns[i]?.jumpTo?.query
-            });
-          }}
-        >
-          {columns[i].toolTip ? (
-            <Tooltip placement="topLeft" title={text}>
+        <>
+          <a
+            onClick={() => {
+              history.push({
+                pathname: columns[i]?.jumpTo?.url,
+                query: columns[i]?.jumpTo?.query
+              });
+            }}
+          >
+            {columns[i].toolTip ? (
+              <Tooltip placement="topLeft" title={text}>
+                <span style={{ color: columns[i].color ? columns[i].color : '' }}>{text}</span>
+              </Tooltip>
+            ) : (
               <span style={{ color: columns[i].color ? columns[i].color : '' }}>{text}</span>
-            </Tooltip>
-          ) : (
-            <span style={{ color: columns[i].color ? columns[i].color : '' }}>{text}</span>
-          )}
-        </a>
+            )}
+          </a>
+          <CopyIcon record={columns[i]} text={text} />
+        </>
       );
     } else {
       columns[i]['render'] = (text: any) =>
         columns[i].toolTip ? (
           <Tooltip placement="topLeft" title={text}>
             <span style={{ color: columns[i].color ? columns[i].color : '' }}>{text}</span>
+            <CopyIcon record={columns[i]} text={text} />
           </Tooltip>
         ) : (
-          <span style={{ color: columns[i].color ? columns[i].color : '' }}>{text}</span>
+          <span style={{ color: columns[i].color ? columns[i].color : '' }}>
+            {text}
+            <CopyIcon record={columns[i]} text={text} />
+          </span>
         );
     }
   }
@@ -276,13 +287,14 @@ export function RankTable({
                 }
             : false
         }
-        dataSource={
-          dataSlice === undefined
-            ? tableData.slice(0, 5)
-            : typeof dataSlice === 'number'
-            ? tableData.slice(0, dataSlice)
-            : tableData
-        }
+        // dataSource={
+        //   dataSlice === undefined
+        //     ? tableData.slice(0, 5)
+        //     : typeof dataSlice === 'number'
+        //       ? tableData.slice(0, dataSlice)
+        //       : tableData
+        // }
+        dataSource={[{ id: 1, name: '测试', age: 11, address: 'shanghai' }]}
         columns={columns}
       />
       <div style={{ maxHeight: document.getElementById('root')!.clientHeight }}>

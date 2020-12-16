@@ -10,14 +10,14 @@
     "access": "public"
   },
   "peerDependencies": {
+    "@ant-design/icons": ">=4",
     "antd": ">=3",
-    "classnames": ">=2",   
+    "classnames": ">=2",
     "minireset.css": ">=0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
     "react-router": ">=4",
-    "styled-components": ">=4",
-    "@ant-design/icons": ">=4"
+    "styled-components": ">=4"
   },
   "types": "./lib/index.d.ts",
   "devDependencies": {
@@ -25,6 +25,7 @@
     "yarn-release": "^1.10.2"
   },
   "dependencies": {
-    "history": ">=4"    
+    "history": ">=4",
+    "react-copy-to-clipboard": "^5.0.2"
   }
 }
