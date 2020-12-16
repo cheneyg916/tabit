@@ -1,0 +1,8 @@
+.idea
+.vscode
+node_modules
+example
+.rts2_cache
+**/lib
+yarn-error.log
+.rpt2_cache
