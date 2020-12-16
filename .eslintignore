@@ -1,0 +1,8 @@
+node_modules
+*.d.ts
+dist
+coverage
+test
+*.json
+packages/**/lib/*
+example
