@@ -1,0 +1,22 @@
+{
+  "name": "@tabit/error-boundary-reporter",
+  "version": "0.0.1",
+  "umdName": "error-boundary-reporter",
+  "description": "An react error reporter component ",
+  "author": "brian",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1"
+  },
+  "types": "./lib/index.d.ts",
+  "devDependencies": {
+    "yarn-release": "^1.10.2"
+  },
+  "dependencies": {
+    "react-error-boundary": "^3.1.0"
+  }
+}
