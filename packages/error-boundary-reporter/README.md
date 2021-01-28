@@ -11,7 +11,7 @@
 ```jsx
 <ErrorBoundaryReporter project="XDCS3.0" baseBackupUrl="http://xdcshera.ximalaya.com/v3/home">
   ...
-</EErrorBoundaryReporter>
+</ErrorBoundaryReporter>
 ```
 
 ### 基本功能
