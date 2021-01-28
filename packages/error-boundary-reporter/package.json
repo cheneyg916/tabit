@@ -1,6 +1,6 @@
 {
-  "name": "@tabit/error-boundary-reporter",
-  "version": "0.0.3",
+  "name": "@xmly/error-boundary-reporter",
+  "version": "0.0.1",
   "umdName": "error-boundary-reporter",
   "description": "An react error reporter component ",
   "author": "brian",
