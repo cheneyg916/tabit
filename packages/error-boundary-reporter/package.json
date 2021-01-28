@@ -2,7 +2,7 @@
   "name": "@xmly/error-boundary-reporter",
   "version": "0.0.2",
   "umdName": "error-boundary-reporter",
-  "description": "An react error reporter component ",
+  "description": "A react error reporter component ",
   "author": "brian",
   "license": "MIT",
   "main": "lib/index.js",
